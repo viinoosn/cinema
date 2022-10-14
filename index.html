@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm bg-primary navbar-light">
+        <div class="row">
+            <div class='col'>
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <img src="image/logo 2.png" class="img-fluid" alt="logo" width="15%">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Now Playing
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="#">Action</a>
+                                    <a class="dropdown-item" href="#">Horror</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">All Genre</a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Upcoming
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="#">Action</a>
+                                    <a class="dropdown-item" href="#">Horror</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">All Genre</a>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Theaters</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Promosi</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Info</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Kontak</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+            <form class="d-flex text-right">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#"><i class="fa fa-facebook fa-2x" aria-hidden="true"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#"><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a>
+                    </li>
+                </ul>
+            </form>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col text-center">
+                <h1>CinemavVv</h1>
+                <br>
+                <button class="btn btn-primary" id="1">Jakarta</button>
+                <button class="btn btn-primary" id="2">Depok</button>
+
+                <hr>
+
+                <div id="theater">
+
+                </div>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-sm-12">
+                <Label>Pilih Film</Label>
+                <select id="Film" class="form-control">
+                    <option value="film123">Pilih Film</option>
+                    <option value="jel1">Jelangkung</option>
+                    <option value="one1">One Piece</option>
+                    <option value="ams1">Amsterdam</option>
+                    <option value="ava1">Avatar</option>
+                    <option value="unt1">Until Tomorrow</option>
+                    <option value="men1">Mencuri Raden Saleh</option>
+                    <option value="tic1">Ticket To Paradise</option>
+                    <option value="ker1">Keramat 2</option>
+                </select>
+                <br>
+                <Label>Pilih Kota</Label>
+                <select id="Kota" class="form-control">
+                    <option value="kota123" data-available-with="jel1,ams1,ava1,unt1,ker1,one1,tic1" selected="selected">Pilih Kota</option>
+                    <option value="jakarta1" data-available-with="jel1,ams1,ava1,unt1,men1">Jakarta</option>
+                    <option value="depok2" data-available-with="tic1,ker1,men1,one1,ams1">Depok</option>
+                    <option value="tangsel3" data-available-with="one1,tic1,jel1,ava1,unt1,ker1,ams1">Tangsel</option>
+                </select>
+                <br>
+                <Label>Pilih Tempat</Label>
+                <select id="Tempat" class="form-control">
+                    <option value="tempat123" data-available-with="jakarta1,depok2,tangsel3" selected="selected">Pilih Kota</option>
+                    <option value="thepark1" data-available-with="tic1+depok2,ker1+depok2,men1+depok2,one1+depok2,ams1+depok2">
+                        The Park
+                    </option>
+                    <option value="cbm2" data-available-with="tic1+depok2,ker1+depok2,men1+depok2,one1+depok2,ams1+depok2">
+                        Cinere Bellevue Mall</option>
+                    <option value="pm3" data-available-with="one1+tangsel3,tic1+tangsel3,jel1+tangsel3,ava1+tangsel3,unt1+tangsel3,ker1+tangsel3,ams1+tangsel3">
+                        Paradise Mall</option>
+                    <option value="cxxi4" data-available-with="jel1+jakarta1,ams1+jakarta1,ava1+jakarta1,unt1+jakarta1,men1+jakarta1">CinemaXXI</option>
+                </select>
+                <br>
+                <Label>Waktu Tayang</Label>
+                <select id="Waktutayang" class="form-control">
+                    <option value="waktutayang123"
+                        data-available-with="thepark1,cbm2,pm3">
+                        Pilih Jam</option>
+                    <option value="1405"
+                        data-available-with="jel1+jakarta1+cxxi4,ams1+jakarta1+cxxi4,ava1+jakarta1+cxxi4,unt1+jakarta1+cxxi4,men1+jakarta1+cxxi4,tic1+depok2+thepark1,ker1+depok2+thepark1,men1+depok2+thepark1,one1+depok2+thepark1,ams1+depok2+thepark1,tic1+depok2+cbm2,ker1+depok2++cbm2,men1+depok2+cbm2,one1+depok2+cbm2,ams1+depok2+cbm2">
+                        14.05</option>
+                    <option value="1535"
+                        data-available-with="one1+tangsel3+pm3,tic1+tangsel3+pm3,jel1+tangsel3+pm3,ava1+tangsel3+pm3,unt1+tangsel3+pm3,ker1+tangsel3+pm3,ams1+tangsel3+pm3">
+                        15.35</option>
+                    <option value="1715" data-available-with="tic1+depok2+thepark1,ker1+depok2+thepark1,men1+depok2+thepark1,one1+depok2+thepark1,ams1+depok2+thepark1,one1+tangsel3+pm3,tic1+tangsel3+pm3,jel1+tangsel3+pm3,ava1+tangsel3+pm3,unt1+tangsel3+pm3,ker1+tangsel3+pm3,ams1+tangsel3+pm3">
+                        17.15</option>
+                    <option value="1845"
+                        data-available-with="jel1+jakarta1+cxxi4,ams1+jakarta1+cxxi4,ava1+jakarta1+cxxi4,unt1+jakarta1+cxxi4,men1+jakarta1+cxxi4,tic1+depok2+thepark1,ker1+depok2+thepark1,men1+depok2+thepark1,one1+depok2+thepark1,ams1+depok2+thepark1,tic1+depok2+cbm2,ker1+depok2++cbm2,men1+depok2+cbm2,one1+depok2+cbm2,ams1+depok2+cbm2">
+                        18.45</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col m-4">
+                <h3 style="text-align:center ;">SEDANG TAYANG</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col mb-3-sm-8">
+                <span style="font-size: 16px">Kota:</span>
+                <select id="dropdown_selector" style="width: 190px">
+                    <option value="content1">Tangsel</option>
+                    <option selected value="content2">Depok</option>
+                    <option value="content3">Jakarta</option>
+                </select>
+            </div>
+            <div class="col-sm-4">
+                <div class="mb-3 container-fluid">
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div id="contentarea" style="font-size: 16px">
+            <div class="row">
+                <div class="col-sm-3" style="width: 18rem;text-align: center;">
+                    <img src="image/Amsterdam.jpg" class="card-img-top" alt="card-fluid">
+                    <div class="card-body">
+                        <h5 class="card-title">Amsterdam</h5>
+                        <a href="#" class="btn btn-primary">Read More...</a>
+                    </div>
+                </div>
+                <div class="col-sm-3" style="width: 18rem;text-align: center;">
+                    <img src="image/ttp.jpg" class="card-img-top" alt="card-fluid">
+                    <div class="card-body">
+                        <h5 class="card-title">Ticket To Paradise</h5>
+                        <a href="ProgramTI.html" class="btn btn-primary">Read More...</a>
+                    </div>
+                </div>
+                <div class="col-sm-3" style="width: 18rem;text-align: center;">
+                    <img src="image/mcr.jpg" class="card-img-top" alt="card-fluid">
+                    <div class="card-body">
+                        <h5 class="card-title">Mencuri Raden Saleh</h5>
+                        <a href="ProgramTI.html" class="btn btn-primary">Read More...</a>
+                    </div>
+                </div>
+                <div class="col-sm-3" style="width: 18rem;text-align: center;">
+                    <img src="image/avatar.jpg" class="card-img-top" alt="card-fluid">
+                    <div class="card-body">
+                        <h5 class="card-title">Avatar</h5>
+                        <a href="ProgramTI.html" class="btn btn-primary">Read More...</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3" style="width: 18rem;text-align: center;">
+                        <img src="image/op.jpg" class="card-img-top" alt="card-fluid">
+                        <div class="card-body">
+                            <h5 class="card-title">OP : Film Red</h5>
+                            <a href="ProgramTI.html" class="btn btn-primary">Read More...</a>
+                        </div>
+                    </div>
+                    <div class="col-sm-3" style="width: 18rem;text-align: center;">
+                        <img src="image/JailangkungSandekala.jpg" class="card-img-top" alt="card-fluid">
+                        <div class="card-body">
+                            <h5 class="card-title">Jailangkung Sandekala</h5>
+                            <a href="ProgramTI.html" class="btn btn-primary">Read More...</a>
+                        </div>
+                    </div>
+                    <div class="col-sm-3" style="width: 18rem;text-align: center;">
+                        <img src="image/UntilTomorrow.jpg" class="card-img-top" alt="card-fluid">
+                        <div class="card-body">
+                            <h5 class="card-title">Until Tomorrow</h5>
+                            <a href="#" class="btn btn-primary">Read More...</a>
+                        </div>
+                    </div>
+                    <div class="col-sm-3" style="width: 18rem;text-align: center;">
+                        <img src="image/Keramat2CarubanLarang.jpg" class="card-img-top" alt="card-fluid">
+                        <div class="card-body">
+                            <h5 class="card-title">Keramat 2: CB</h5>
+                            <a href="#" class="btn btn-primary">Read More...</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col" style="text-align: center; background-color:rgb(75, 75, 199)">Copyright © 2022 Vino
+            Endang Ramadan
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#dropdown_selector").change(function () {
+                var option = $(this).find("option:selected").val();
+                if (option == "content1") {
+                    $.ajax({
+                        url: "content1.html",
+                        success: function (result) {
+                            $("#contentarea").html(result);
+                        },
+                    });
+                } else if (option == "content2") {
+                    $.ajax({
+                        url: "content2.html",
+                        success: function (result) {
+                            $("#contentarea").html(result);
+                        },
+                    });
+                } else {
+                    $.ajax({
+                        url: "content3.html",
+                        success: function (result) {
+                            $("#contentarea").html(result);
+                        },
+                    });
+                }
+            });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $("#1").click(function () {
+                $("#theater").load("Location.html #2");
+            });
+        });
+
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("#2").click(function () {
+                $("#theater").load("Location.html #3");
+            });
+        });
+
+    </script>
+    <script src="jquery.chainedTo.min.js" typw="text/javascript" charset="utf-8"></script>
+    <script>
+        $("#Kota").chainedTo("#Film");
+        $("#Tempat").chainedTo("#Film,#Kota");
+        $("#Waktutayang").chainedTo("#Film,#Kota,#Tempat");
+    </script>
+  
+    <script type="text/javascript">
+  
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-36251023-1']);
+      _gaq.push(['_setDomainName', 'jqueryscript.net']);
+      _gaq.push(['_trackPageview']);
+  
+      (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+  
+    </script>
+
+</body>
+
+</html>
